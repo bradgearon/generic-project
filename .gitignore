@@ -1,0 +1,7 @@
+packages
+/GenericProject.Core/obj
+/GenericProject.Core/bin
+/GenericProject.Database/obj
+/GenericProject.Database/bin
+/GenericProject.Web/bin
+/GenericProject.Web/obj

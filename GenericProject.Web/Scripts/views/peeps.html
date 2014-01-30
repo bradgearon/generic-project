@@ -1,0 +1,52 @@
+<pre>{{PaginationState}}</pre>
+<pre>{{PeepFilter}}</pre>
+<pre>{{CurrentPage}}</pre>
+<div ng-form>
+    <input type="search" ng-model="PeepFilter.Search" />|<select ng-model="PeepFilter.ZipCode" ng-options="p.ZipCode as p.ZipCode for p in ZipCodes">
+        <option value=""></option>
+    </select>
+    |
+    <button class='btn btn-xs btn-default' ng-click="filter()">Search</button>
+    |
+    <button class='btn btn-xs btn-default' ng-click="resetFilter()">Reset</button>
+</div>
+<br />
+<br />
+
+<div class="panel panel-default">
+<div class="panel-heading">Panel heading</div>
+<table class="table-hover table table-bordered table-striped table-condensed">
+    <thead>
+        <tr>
+            <th gen-order-by="Id">Id</th>
+            <th gen-order-by="Name">Name</th>
+            <th gen-order-by="Email">Email</th>
+            <th gen-order-by="ZipCode">Zip</th>
+            <th gen-order-by="Note">Note</th>
+        </tr>
+        <tr ng-show="PaginationState.Items.length == 0 && !Busy()">
+            <th colspan="5">No results found...</th>
+        </tr>
+        <tr ng-show="Busy()">
+            <th colspan="5">
+                <div class="overlay">
+                    <div spin spin-opts="spin" spin-when="Busy()"></div>
+                </div>
+            </th>
+        </tr>
+    </thead>
+    <tbody ng-show="!Busy()">
+        <tr ng-repeat="p in PaginationState.Items">
+            <td>{{p.Id}}</td>
+            <td>{{p.Name}}</td>
+            <td>{{p.Email}}</td>
+            <td>{{p.ZipCode}}</td>
+            <td>{{p.Note}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div>
+    <pagination total-items="PaginationState.TotalCount" page="PaginationState.PaginationRequest.PageNumber" items-per-page="PaginationState.PageSize" max-size="5" class="pagination-sm" boundary-links="true" on-select-page="gotoPage(page)"></pagination>
+</div>

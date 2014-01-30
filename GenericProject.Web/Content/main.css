@@ -1,0 +1,37 @@
+﻿body
+{
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu
+{
+    display: block;
+    position: static;
+    margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn
+{
+    margin: 5px 0;
+}
+
+
+.spinner
+{
+    top: 50%;
+    left: 50%;
+    position: absolute !important;
+}
+
+.overlay
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .7;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}

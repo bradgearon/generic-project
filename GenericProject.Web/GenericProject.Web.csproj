@@ -1,0 +1,1995 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{49D7E07A-7222-4054-B235-2785BBB656F8}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GenericProject.Web</RootNamespace>
+    <AssemblyName>GenericProject.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.0\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiControllers\BaseApiController.cs" />
+    <Compile Include="ApiControllers\PeepsController.cs" />
+    <Compile Include="ApiControllers\HomeController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\InjectionConfig.cs" />
+    <Compile Include="App_Start\JsonContentNegotiator.cs" />
+    <Compile Include="App_Start\NinjectDependencyResolver.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Scripts\controllers\StyleController.js" />
+    <Content Include="Scripts\directives\OrderByDirective.js" />
+    <Content Include="Scripts\directives\SpinDirective.js" />
+    <Content Include="Scripts\lib\angular-bootstrap\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\lib\angular-bootstrap\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\lib\angular-bootstrap\ui-bootstrap.js" />
+    <Content Include="Scripts\lib\angular-bootstrap\ui-bootstrap.min.js" />
+    <Content Include="Scripts\lib\angular-pines-notify\app\demo.html" />
+    <Content Include="Scripts\lib\angular-pines-notify\src\pnotify.js" />
+    <Content Include="Scripts\lib\pines-notify\devnote-stable.css" />
+    <Content Include="Scripts\lib\pines-notify\devnote.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\beautify.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\css\bootstrap.amelia.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\css\bootstrap.cerulean.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\css\bootstrap.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\css\bootstrap.cyborg.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\css\bootstrap.journal.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\css\bootstrap.readable.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\css\bootstrap.simplex.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\css\bootstrap.slate.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\css\bootstrap.spacelab.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\css\bootstrap.spruce.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\css\bootstrap.superhero.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\css\bootstrap.united.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\js\bootstrap.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\github-icon.png" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-apollo.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-clj.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-css.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-go.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-hs.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-lisp.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-lua.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-ml.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-n.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-proto.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-scala.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-sql.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-tex.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-vb.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-vhdl.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-wiki.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-xq.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\lang-yaml.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\prettify.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\google-code-prettify\prettify.js" />
+    <Content Include="Scripts\lib\pines-notify\includes\pform-bootstrap.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\pform-ie-lt-8.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\pform.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\pines-logo.png" />
+    <Content Include="Scripts\lib\pines-notify\includes\source-screen.png" />
+    <Content Include="Scripts\lib\pines-notify\includes\style.css" />
+    <Content Include="Scripts\lib\pines-notify\includes\themeroller-ready.png" />
+    <Content Include="Scripts\lib\pines-notify\index.html" />
+    <Content Include="Scripts\lib\pines-notify\jquery.pnotify.default.css" />
+    <Content Include="Scripts\lib\pines-notify\jquery.pnotify.default.icons.css" />
+    <Content Include="Scripts\lib\pines-notify\jquery.pnotify.js" />
+    <Content Include="Scripts\lib\pines-notify\jquery.pnotify.min.js" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\acrobat.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\address-book-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\application-exit.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\appointment-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\archive-extract.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\archive-insert-directory.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\archive-insert.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\archive-remove.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\arrow-down-double.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\arrow-down.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\arrow-left-double.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\arrow-left.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\arrow-right-double.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\arrow-right.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\arrow-up-double.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\arrow-up.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\bookmark-new-list.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\bookmark-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\bookmark-toolbar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\bookmarks-organize.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\character-set.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\checkbox.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\chronometer.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\color-picker-black.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\color-picker-grey.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\color-picker-white.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\color-picker.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\configure-shortcuts.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\configure-toolbars.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\configure.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\contact-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\dashboard-show.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\dialog-cancel.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\dialog-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\dialog-ok-apply.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\dialog-ok.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-decrypt.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-edit-decrypt-verify.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-edit-decrypt.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-edit-encrypt.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-edit-sign-encrypt.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-edit-sign.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-edit-verify.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-edit.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-encrypt.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-export-table.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-export.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-import.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-open-data.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-open-folder.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-open-recent.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-open-remote.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-open.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-preview-archive.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-preview.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-print-preview.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-print.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-properties.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-revert.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-save-all.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-save-as.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-save.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-sign.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\document-swap.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\documentation.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\documentinfo.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\download-later.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\download.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-bomb.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-clear-history.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-clear-list.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-clear-locationbar-ltr.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-clear-locationbar-rtl.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-clear.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-copy.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-cut.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-delete-shred.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-delete.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-find-replace.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-find.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-link.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-paste.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-redo.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-rename.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-select-all.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-select.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-table-delete-column.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-table-delete-row.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-table-insert-column-left.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-table-insert-column-right.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-table-insert-row-above.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-table-insert-row-under.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-text-frame-update.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\edit-undo.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\feed-subscribe.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\fill-color.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\flag-black.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\flag-blue.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\flag-green.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\flag-red.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\flag-yellow.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\flag.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\folder-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\folder-sync.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\fork.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\get-hot-new-stuff.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-bottom.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-down-search.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-down.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-first-view.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-first.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-home.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-jump-locationbar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-jump-today.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-jump.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-last-view.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-last.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-next-view.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-next.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-parent-folder.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-previous-view.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-previous.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-top.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-up-search.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\go-up.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\help-about.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\help-contents.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\help-contextual.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\help-hint.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\im-ban-kick-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\im-ban-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\im-invisible-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\im-kick-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\im-user-away.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\im-user-busy.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\im-user-offline.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\im-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\insert-button.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\insert-horizontal-rule.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\insert-image.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\insert-link.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\insert-table.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\insert-text-frame.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\insert-text.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\layer-visible-off.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\layer-visible-on.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\list-add-font.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\list-add-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\list-add.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\list-remove-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\list-remove.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\list-resource-add.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-flag.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-forward.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-invitation.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-mark-important.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-mark-junk.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-mark-notjunk.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-mark-read.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-mark-unread-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-mark-unread.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-message-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-queue.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-receive.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-reply-all.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-reply-custom-all.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-reply-custom.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-reply-list.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-reply-sender.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\mail-send.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\measure.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\media-eject.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\media-playback-pause.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\media-playback-start.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\media-playback-stop.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\media-record.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\media-seek-backward.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\media-seek-forward.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\media-skip-backward.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\media-skip-forward.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\meeting-attending-tentative.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\meeting-attending.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\milestone.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\network-connect.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\network-disconnect.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\news-subscribe.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\news-unsubscribe.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\object-flip-horizontal.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\object-flip-vertical.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\object-group.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\object-order-back.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\object-order-front.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\object-order-lower.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\object-order-raise.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\object-rotate-left.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\object-rotate-right.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\object-ungroup.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\office-chart-area-precentage.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\office-chart-area-stacked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\office-chart-area.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\office-chart-bar-percentage.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\office-chart-bar-stacked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\office-chart-bar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\office-chart-line-percentage.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\office-chart-line-stacked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\office-chart-line.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\office-chart-pie.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\office-chart-polar-stacked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\office-chart-polar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\office-chart-ring.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\office-chart-scatter.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\page-zoom.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\player-time.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\player-volume.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\preflight-verifier.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\process-stop.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\project-development-close-all.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\project-development-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\project-development-new-template.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\project-development.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\project-open.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\rating.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\resource-calendar-child-insert.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\resource-calendar-insert.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\resource-group-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\resource-group.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\roll.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\select-rectangular.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\services.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\show-menu.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\speaker.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\story-editor.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\svn-commit.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\svn-update.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\system-lock-screen.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\system-log-out.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\system-reboot.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\system-run.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\system-search.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\system-shutdown.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\system-suspend-hibernate.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\system-suspend.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\system-switch-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\tab-close-other.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\tab-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\tab-detach.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\tab-duplicate.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\tab-new-background.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\tab-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\text-field.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\text-frame-link.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\text-frame-unlink.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\text-speak.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\tool-animator.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\tools-check-spelling.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\tools-report-bug.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\tools-wizard.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\transform-crop-and-resize.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\transform-crop.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\transform-move.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\transform-rotate.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\transform-scale.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\transform-shear-down.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\transform-shear-left.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\transform-shear-right.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\transform-shear-up.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\trash-empty.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\user-group-delete.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\user-group-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\user-group-properties.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\user-properties.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-bank.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-barcode-add.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-barcode.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-agenda.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-birthday.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-day.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-holiday.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-journal.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-list.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-month.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-special-occasion.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-tasks.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-time-spent.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-timeline.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-upcoming-days.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-upcoming-events.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-wedding-anniversary.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-week.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-whatsnext.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar-workweek.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-calendar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-certificate-add.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-certificate-export-secret.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-certificate-export-server.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-certificate-export.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-certificate-import.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-certificate-server-configure.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-certificate-sign.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-certificate.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-choose.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-file-columns.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-filter.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-form-action.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-form-table.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-form.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-fullscreen.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-grid.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-history.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-ldap-resource.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-left-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-list-details.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-list-icons.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-list-text.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-list-tree.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-media-artist.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-media-equalizer.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-media-lyrics.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-media-playlist.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-media-visualization.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-multiple-objects.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-object-histogram-linear.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-object-histogram-logarithmic.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-pim-calendar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-pim-contacts.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-pim-journal.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-pim-mail.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-pim-news.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-pim-notes.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-pim-summary.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-pim-tasks-pending.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-pim-tasks.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-presentation.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-preview.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-process-all-tree.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-process-all.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-process-own.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-process-system.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-process-tree.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-process-users.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-refresh.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-resource-calendar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-restore.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-right-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-right-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-sidetree.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-sort-ascending.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-sort-descending.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-split-left-right.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-split-top-bottom.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-statistics.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-task-add.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-task-child.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-task.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-time-schedule-baselined-add.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-time-schedule-baselined-remove.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-time-schedule-baselined.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-time-schedule-calculus.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-time-schedule-child-insert.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-time-schedule-edit.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-time-schedule.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\view-web-browser-dom-tree.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\window-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\window-duplicate.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\window-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\zoom-fit-best.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\zoom-fit-height.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\zoom-fit-width.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\zoom-in.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\zoom-original.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\actions\zoom-out.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\animations\process-working.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\animations\throbber.gif" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\accessories-calculator.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\accessories-character-map.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\accessories-dictionary.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\accessories-text-editor.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\clock.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\graphics-viewer-document.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\help-browser.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\internet-mail.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\internet-telephony.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\internet-web-browser.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\multimedia-volume-control.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\office-address-book.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\office-calendar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-contact-list.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-accessibility.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-color.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-cryptography.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-default-applications.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-display-color.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-display.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-filetype-association.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-font.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-gaming.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-icons.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-keyboard.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-launch-feedback.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-locale.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-mouse.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-notification-bell.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-notification.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-printer.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-screensaver.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-sound.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-text-to-speech.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-theme.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-user-password.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-desktop-wallpaper.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-plugin-script.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-plugin.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-system-bluetooth.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-system-login.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-system-network-sharing.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-system-performance.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-system-power-management.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-system-session-services.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-system-time.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-system-windows-actions.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-system-windows-move.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-system-windows.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-web-browser-adblock.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-web-browser-cache.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-web-browser-cookies.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-web-browser-identification.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-web-browser-shortcuts.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\preferences-web-browser-stylesheets.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\system-file-manager.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\system-software-update.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\system-users.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\utilities-desktop-extra.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\utilities-file-archiver.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\utilities-log-viewer.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\utilities-system-monitor.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\apps\utilities-terminal.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-accessories.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-development-translation.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-development-web.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-development.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-education-language.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-education-mathematics.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-education.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-engineering.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-games.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-graphics.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-internet.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-multimedia.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-office.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-other.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-science.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-system.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-toys.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\applications-utilities.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\preferences-desktop-peripherals.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\preferences-desktop-personal.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\preferences-desktop.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\preferences-other.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\preferences-system-network.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\preferences-system.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\categories\system-help.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\audio-card.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\audio-headset.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\audio-input-line.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\audio-input-microphone.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\battery.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\camera-photo.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\camera-web.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\computer-laptop.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\computer.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\cpu.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\drive-harddisk.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\drive-optical.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\drive-removable-media-usb-pendrive.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\drive-removable-media-usb.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\drive-removable-media.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\input-gaming.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\input-keyboard.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\input-mouse.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\input-tablet.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\media-flash-memory-stick.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\media-flash-sd-mmc.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\media-flash-smart-media.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\media-flash.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\media-floppy.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\media-optical.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\media-tape.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\modem.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\multimedia-player.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\network-wired.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\network-wireless.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\pda.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\phone.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\printer.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\scanner.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\secure-card.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\video-display.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\video-projector.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\devices\video-television.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\emblem-encrypted-locked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\emblem-encrypted-unlocked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\emblem-favorite.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\emblem-important.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\emblem-locked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\emblem-mounted.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\emblem-symbolic-link.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\emblem-unlocked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\emblem-unmounted.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\vcs-added.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\vcs-conflicting.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\vcs-locally-modified.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\vcs-normal.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\vcs-removed.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emblems\vcs-update-required.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emotes\face-angel.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emotes\face-embarrassed.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emotes\face-kiss.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emotes\face-laugh.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emotes\face-plain.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emotes\face-raspberry.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emotes\face-sad.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emotes\face-smile-big.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emotes\face-smile.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emotes\face-surprise.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emotes\face-uncertain.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\emotes\face-wink.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-javascript.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-octet-stream.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-pdf.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-rss+xml.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-rtf.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-x-desktop.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-x-executable-script.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-x-executable.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-x-php.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-x-shellscript.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-x-shockwave-flash.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-x-trash.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-x-zerosize.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-xhtml+xml.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-xml.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\application-xslt+xml.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\audio-midi.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\audio-x-generic.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\encrypted.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\image-svg+xml-compressed.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\image-svg+xml.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\image-x-generic.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\inode-directory.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\message-news.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\message.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\package-x-generic.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\text-calendar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\text-css.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\text-csv.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\text-directory.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\text-html.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\text-plain.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\text-rtf.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\text-x-generic.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\text-xml.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\unknown.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\video-x-generic.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\x-office-address-book.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\x-office-calendar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\x-office-contact.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\x-office-database.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\x-office-document.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\x-office-presentation.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\mimetypes\x-office-spreadsheet.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\bookmarks.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\certificate-server.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\document-multiple.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\favorites.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-blue.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-bookmark.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-brown.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-cyan.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-development.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-documents.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-downloads.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-favorites.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-green.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-grey.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-html.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-image.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-important.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-locked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-orange.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-print.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-red.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-remote.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-sound.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-tar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-txt.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-video.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-violet.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder-yellow.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\folder.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\mail-folder-inbox.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\mail-folder-outbox.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\mail-folder-sent.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\mail-message.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\network-server-database.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\network-server.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\network-workgroup.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\repository.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\server-database.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\start-here.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\user-desktop.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\user-home.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\user-identity.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\places\user-trash.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\appointment-recurring.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\appointment-reminder.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\audio-volume-high.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\audio-volume-low.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\audio-volume-medium.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\audio-volume-muted.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\dialog-error.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\dialog-information.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\dialog-password.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\dialog-warning.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\folder-open.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\image-loading.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\image-missing.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\mail-attachment.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\mail-forwarded.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\mail-queued.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\mail-read.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\mail-replied.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\mail-sent.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\mail-tagged.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\mail-task.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\mail-unread-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\mail-unread.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\media-playlist-repeat.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\media-playlist-shuffle.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\meeting-organizer.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\object-locked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\object-unlocked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\script-error.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\security-high.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\security-low.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\security-medium.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\task-complete.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\task-recurring.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\task-reminder.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\user-away-extended.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\user-away.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\user-busy.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\user-invisible.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\user-offline.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\user-online.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\user-trash-full.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-clear-night.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-clear.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-clouds-night.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-clouds.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-few-clouds-night.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-few-clouds.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-freezing-rain.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-hail.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-many-clouds.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-mist.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-showers-day.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-showers-night.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-showers-scattered-day.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-showers-scattered-night.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-showers-scattered.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-showers.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-snow-rain.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-snow-scattered-day.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-snow-scattered-night.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-snow-scattered.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-snow.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\weather-storm.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\16\status\window-suppressed.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\address-book-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\application-exit.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\appointment-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\archive-extract.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\archive-insert-directory.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\archive-insert.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\archive-remove.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\arrow-down-double.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\arrow-down.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\arrow-left-double.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\arrow-left.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\arrow-right-double.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\arrow-right.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\arrow-up-double.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\arrow-up.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\bookmark-new-list.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\bookmark-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\bookmark-toolbar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\bookmarks-organize.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\character-set.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\checkbox.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\chronometer.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\color-picker-black.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\color-picker-grey.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\color-picker-white.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\color-picker.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\configure-shortcuts.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\configure-toolbars.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\configure.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\contact-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\dashboard-show.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\dialog-cancel.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\dialog-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\dialog-ok-apply.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\dialog-ok.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-decrypt.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-edit-decrypt-verify.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-edit-decrypt.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-edit-encrypt.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-edit-sign-encrypt.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-edit-sign.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-edit-verify.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-edit.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-encrypt.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-encrypted.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-export-table.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-export.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-import.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-open-folder.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-open-recent.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-open-remote.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-open.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-preview-archive.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-preview.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-print-preview.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-print.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-properties.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-revert.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-save-all.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-save-as.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-save.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\document-sign.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\documentation.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\download-later.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\download.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-bomb.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-clear-history.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-clear-list.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-clear-locationbar-ltr.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-clear-locationbar-rtl.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-clear.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-copy.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-cut.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-delete-shred.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-delete.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-find-replace.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-find.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-paste.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-redo.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-rename.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-select-all.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-select.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-table-delete-column.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-table-delete-row.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-table-insert-column-left.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-table-insert-column-right.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-table-insert-row-above.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-table-insert-row-below.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-text-frame-update.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\edit-undo.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\feed-subscribe.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\fileview-preview.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\fill-color.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\flag-black.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\flag-blue.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\flag-green.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\flag-red.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\flag-yellow.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\flag.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\folder-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\folder-sync.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\fork.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\get-hot-new-stuff.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-bottom.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-down-search.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-down.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-first-view.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-first.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-home.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-jump-locationbar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-jump-today.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-jump.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-last-view.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-last.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-next-view.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-next.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-previous-view.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-previous.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-top.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-up-search.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\go-up.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\help-about.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\help-contents.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\help-contextual.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\help-hint.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\im-ban-kick-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\im-ban-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\im-invisible-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\im-kick-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\im-user-away.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\im-user-busy.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\im-user-offline.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\im-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\insert-horizontal-rule.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\insert-image.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\insert-link.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\insert-table.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\insert-text.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\journal-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\layer-visible-off.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\layer-visible-on.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\list-add-font.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\list-add-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\list-add.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\list-remove-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\list-remove.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\list-resource-add.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-flag.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-forward.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-invitation.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-mark-important.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-mark-junk.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-mark-notjunk.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-mark-read.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-mark-task.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-mark-unread-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-mark-unread.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-message-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-queue.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-receive.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-reply-all.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-reply-custom-all.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-reply-custom.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-reply-list.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-reply-sender.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\mail-send.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\measure.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\media-eject.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\media-playback-pause.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\media-playback-start.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\media-playback-stop.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\media-record.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\media-seek-backward.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\media-seek-forward.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\media-skip-backward.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\media-skip-forward.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\meeting-attending-tentative.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\meeting-attending.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\milestone.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\network-connect.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\network-disconnect.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\news-subscribe.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\news-unsubscribe.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\object-flip-horizontal.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\object-flip-vertical.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\object-rotate-left.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\object-rotate-right.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\office-chart-area-percentage.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\office-chart-area-stacked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\office-chart-area.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\office-chart-bar-percentage.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\office-chart-bar-stacked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\office-chart-bar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\office-chart-line-percentage.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\office-chart-line-stacked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\office-chart-line.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\office-chart-pie.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\office-chart-polar-stacked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\office-chart-polar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\office-chart-ring.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\office-chart-scatter.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\page-zoom.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\player-time.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\player-volume.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\preflight-verifier.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\process-stop.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\project-development-close-all.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\project-development-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\project-development-new-template.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\project-development.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\project-open.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\rating.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\resource-calendar-child-insert.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\resource-calendar-insert.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\resource-group-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\resource-group.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\roll.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\select-rectangular.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\services.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\shapes.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\show-menu.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\speaker.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\split.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\story-editor.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\svn-commit.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\svn-update.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\system-lock-screen.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\system-log-out.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\system-reboot.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\system-run.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\system-search.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\system-shutdown.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\system-suspend-hibernate.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\system-suspend.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\system-switch-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\tab-close-other.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\tab-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\tab-detach.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\tab-duplicate.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\tab-new-background.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\tab-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\task-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\text-field.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\text-frame-link.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\text-frame-unlink.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\text-speak.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\tool-animator.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\tools-check-spelling.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\tools-report-bug.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\tools-wizard.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\transform-crop-and-resize.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\transform-crop.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\transform-move.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\transform-rotate.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\transform-scale-textbox-points.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\transform-scale.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\transform-shear-down.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\transform-shear-left.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\transform-shear-right.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\transform-shear-up.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\trash-empty.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\user-group-delete.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\user-group-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\user-group-properties.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\user-properties.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-bank-account.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-bank.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-barcode-add.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-barcode.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-agenda.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-birthday.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-day.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-holiday.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-journal.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-list.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-month.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-special-occasion.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-tasks.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-time-spent.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-timeline.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-upcoming-days.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-upcoming-events.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-wedding-anniversary.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-week.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-whatsnext.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar-workweek.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-calendar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-catalog.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-certificate-add.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-certificate-export-secret.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-certificate-export-server.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-certificate-export.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-certificate-import.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-certificate-server-configure.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-certificate-sign.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-certificate.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-choose.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-credit-card-account.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-currency-list.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-file-columns.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-filter.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-financial-list.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-form-action.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-form-table.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-form.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-fullscreen.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-grid.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-history.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-investment.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-ldap-resource.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-left-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-list-details.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-list-icons.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-list-text.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-list-tree.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-media-artist.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-media-equalizer.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-media-lyrics.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-media-playlist.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-media-visualization.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-multiple-objects.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-object-histogram-linear.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-object-histogram-logarithmic.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-pim-calendar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-pim-contacts.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-pim-journal.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-pim-mail.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-pim-news.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-pim-notes.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-pim-summary.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-pim-tasks-pending.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-pim-tasks.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-presentation.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-preview.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-process-all-tree.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-process-all.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-process-own.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-process-system.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-process-users.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-refresh.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-resource-calendar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-restore.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-right-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-right-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-sidetree.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-sort-ascending.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-sort-descending.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-split-left-right.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-split-top-bottom.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-statistics.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-stock-account.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-table-of-contents-ltr.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-table-of-contents-rtl.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-task-add.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-task-child.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-task.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-time-schedule-baselined-add.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-time-schedule-baselined-remove.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-time-schedule-baselined.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-time-schedule-calculus.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-time-schedule-child-insert.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-time-schedule-edit.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-time-schedule.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\view-web-browser-dom-tree.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\window-close.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\window-duplicate.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\window-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\zoom-fit-best.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\zoom-fit-height.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\zoom-fit-width.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\zoom-in.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\zoom-original.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\actions\zoom-out.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\animations\process-working.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\animations\throbber.gif" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\accessories-calculator.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\accessories-character-map.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\accessories-dictionary.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\accessories-text-editor.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\clock.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\graphics-viewer-document.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\help-browser.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\internet-mail.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\internet-telephony.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\internet-web-browser.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\multimedia-volume-control.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\office-address-book.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\office-calendar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-contact-list.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-accessibility.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-color.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-cryptography.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-default-applications.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-display-color.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-display.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-filetype-association.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-font.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-gaming.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-icons.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-keyboard.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-launch-feedback.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-locale.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-mouse.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-notification-bell.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-notification.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-printer.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-screensaver.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-sound.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-text-to-speech.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-theme.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-user-password.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-user.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-desktop-wallpaper.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-plugin-script.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-plugin.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-system-bluetooth.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-system-login.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-system-network-sharing.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-system-performance.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-system-power-management.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-system-session-services.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-system-time.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-system-windows-actions.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-system-windows-move.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-system-windows.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-web-browser-adblock.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-web-browser-cache.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-web-browser-cookies.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-web-browser-identification.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-web-browser-shortcuts.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\preferences-web-browser-stylesheets.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\system-file-manager.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\system-software-update.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\system-users.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\utilities-desktop-extra.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\utilities-file-archiver.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\utilities-log-viewer.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\utilities-system-monitor.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\apps\utilities-terminal.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-accessories.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-development-translation.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-development-web.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-development.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-education-language.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-education-mathematics.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-education.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-engineering.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-games.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-graphics.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-internet.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-multimedia.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-office.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-other.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-science.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-system.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-toys.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\applications-utilities.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\preferences-desktop-peripherals.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\preferences-desktop-personal.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\preferences-desktop.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\preferences-other.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\preferences-system-network.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\preferences-system.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\categories\system-help.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\audio-card.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\audio-headset.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\audio-input-line.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\audio-input-microphone.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\battery.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\camera-photo.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\camera-web.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\computer-laptop.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\computer.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\cpu.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\drive-harddisk.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\drive-optical.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\drive-removable-media-usb-pendrive.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\drive-removable-media-usb.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\drive-removable-media.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\input-gaming.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\input-keyboard.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\input-mouse.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\input-tablet.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\media-flash-memory-stick.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\media-flash-sd-mmc.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\media-flash-smart-media.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\media-flash.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\media-floppy.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\media-optical.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\media-tape.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\modem.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\multimedia-player.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\network-wired.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\network-wireless.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\pda.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\phone.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\printer-laser.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\printer.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\scanner.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\secure-card.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\video-display.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\video-projector.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\devices\video-television.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\emblem-encrypted-locked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\emblem-encrypted-unlocked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\emblem-favorite.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\emblem-important.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\emblem-locked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\emblem-mounted.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\emblem-symbolic-link.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\emblem-unlocked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\emblem-unmounted.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\vcs-added.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\vcs-conflicting.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\vcs-locally-modified.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\vcs-normal.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\vcs-removed.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emblems\vcs-update-required.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emotes\face-angel.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emotes\face-embarrassed.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emotes\face-kiss.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emotes\face-laugh.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emotes\face-plain.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emotes\face-raspberry.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emotes\face-sad.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emotes\face-smile-big.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emotes\face-smile.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emotes\face-surprise.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emotes\face-uncertain.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\emotes\face-wink.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-javascript.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-octet-stream.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-pdf.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-rss+xml.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-x-desktop.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-x-executable-script.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-x-executable.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-x-php.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-x-shellscript.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-x-shockwave-flash.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-x-trash.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-x-zerosize.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-xhtml+xml.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-xml.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\application-xslt+xml.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\audio-midi.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\audio-x-generic.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\encrypted.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\image-svg+xml-compressed.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\image-svg+xml.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\image-x-generic.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\inode-directory.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\message-news.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\message.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\package-x-generic.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\text-calendar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\text-css.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\text-csv.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\text-directory.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\text-html.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\text-plain.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\text-rtf.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\text-x-generic.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\text-xml.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\unknown.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\video-x-generic.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\x-office-address-book.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\x-office-calendar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\x-office-contact.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\x-office-database.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\x-office-document.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\x-office-presentation.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\mimetypes\x-office-spreadsheet.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\bookmarks.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\certificate-server.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\document-multiple.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\favorites.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-blue.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-bookmark.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-brown.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-cyan.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-development.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-documents.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-downloads.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-favorites.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-green.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-grey.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-html.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-image.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-important.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-locked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-orange.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-print.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-red.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-remote.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-sound.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-tar.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-txt.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-video.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-violet.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder-yellow.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\folder.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\mail-folder-inbox.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\mail-folder-outbox.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\mail-folder-sent.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\mail-message.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\network-server-database.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\network-server.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\network-workgroup.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\repository.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\server-database.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\start-here.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\user-desktop.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\user-home.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\user-identity.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\places\user-trash.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\appointment-recurring.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\appointment-reminder.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\audio-volume-high.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\audio-volume-low.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\audio-volume-medium.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\audio-volume-muted.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\dialog-error.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\dialog-information.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\dialog-password.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\dialog-warning.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\folder-open.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\image-loading.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\image-missing.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\mail-attachment.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\mail-forwarded.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\mail-queued.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\mail-read.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\mail-replied.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\mail-tagged.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\mail-unread-new.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\mail-unread.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\media-playlist-repeat.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\media-playlist-shuffle.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\meeting-organizer.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\object-locked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\object-unlocked.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\script-error.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\security-high.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\security-low.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\security-medium.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\task-complete.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\task-recurring.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\task-reminder.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\user-away-extended.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\user-away.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\user-busy.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\user-offline.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\user-online.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\user-trash-full.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-clear-night.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-clear.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-clouds-night.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-clouds.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-few-clouds-night.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-few-clouds.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-freezing-rain.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-hail.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-many-clouds.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-mist.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-none-available.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-showers-day.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-showers-night.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-showers-scattered-day.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-showers-scattered-night.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-showers-scattered.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-showers.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-snow-rain.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-snow-scattered-day.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-snow-scattered-night.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-snow-scattered.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-snow.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\weather-storm.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\32\status\window-suppressed.png" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\icons.css" />
+    <Content Include="Scripts\lib\pines-notify\testing.html" />
+    <Content Include="Scripts\lib\spinjs\.gitignore" />
+    <Content Include="Scripts\lib\spinjs\jquery.spin.js" />
+    <Content Include="Scripts\lib\spinjs\LICENSE.txt" />
+    <Content Include="Scripts\lib\spinjs\spin.js" />
+    <Content Include="Scripts\services\ApiService.js" />
+    <Content Include="Scripts\views\style.html" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="ViewModels\IMappableViewModel.cs" />
+    <Compile Include="ViewModels\MappableViewModel.cs" />
+    <Compile Include="ViewModels\RoleVm.cs" />
+    <Compile Include="ViewModels\UserVm.cs" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\controllers\PeepsController.js" />
+    <Content Include="Scripts\controllers\MainController.js" />
+    <Content Include="Scripts\lib\angular-cookies\angular-cookies.js" />
+    <Content Include="Scripts\lib\angular-cookies\angular-cookies.min.js" />
+    <Content Include="Scripts\lib\angular-mocks\angular-mocks.js" />
+    <Content Include="Scripts\lib\angular-resource\angular-resource.js" />
+    <Content Include="Scripts\lib\angular-resource\angular-resource.min.js" />
+    <Content Include="Scripts\lib\angular-route\angular-route.js" />
+    <Content Include="Scripts\lib\angular-route\angular-route.min.js" />
+    <Content Include="Scripts\lib\angular-sanitize\angular-sanitize.js" />
+    <Content Include="Scripts\lib\angular-sanitize\angular-sanitize.min.js" />
+    <Content Include="Scripts\lib\angular-scenario\angular-scenario.js" />
+    <Content Include="Scripts\lib\angular-scenario\jstd-scenario-adapter-config.js" />
+    <Content Include="Scripts\lib\angular-scenario\jstd-scenario-adapter.js" />
+    <Content Include="Scripts\lib\angular-ui-utils\ui-utils-ieshiv.js" />
+    <Content Include="Scripts\lib\angular-ui-utils\ui-utils-ieshiv.min.js" />
+    <Content Include="Scripts\lib\angular-ui-utils\ui-utils.js" />
+    <Content Include="Scripts\lib\angular-ui-utils\ui-utils.min.js" />
+    <Content Include="Scripts\lib\angular\angular-csp.css" />
+    <Content Include="Scripts\lib\angular\angular.js" />
+    <Content Include="Scripts\lib\angular\angular.min.js" />
+    <Content Include="Scripts\lib\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Scripts\lib\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\lib\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Scripts\lib\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Scripts\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\lib\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Scripts\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Scripts\lib\bootstrap\js\affix.js" />
+    <Content Include="Scripts\lib\bootstrap\js\alert.js" />
+    <Content Include="Scripts\lib\bootstrap\js\button.js" />
+    <Content Include="Scripts\lib\bootstrap\js\carousel.js" />
+    <Content Include="Scripts\lib\bootstrap\js\collapse.js" />
+    <Content Include="Scripts\lib\bootstrap\js\dropdown.js" />
+    <Content Include="Scripts\lib\bootstrap\js\modal.js" />
+    <Content Include="Scripts\lib\bootstrap\js\popover.js" />
+    <Content Include="Scripts\lib\bootstrap\js\scrollspy.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tab.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tooltip.js" />
+    <Content Include="Scripts\lib\bootstrap\js\transition.js" />
+    <Content Include="Scripts\lib\es5-shim\.gitignore" />
+    <Content Include="Scripts\lib\es5-shim\es5-sham.js" />
+    <Content Include="Scripts\lib\es5-shim\es5-sham.min.js" />
+    <Content Include="Scripts\lib\es5-shim\es5-shim.js" />
+    <Content Include="Scripts\lib\es5-shim\es5-shim.min.js" />
+    <Content Include="Scripts\lib\es5-shim\tests\helpers\h-kill.js" />
+    <Content Include="Scripts\lib\es5-shim\tests\helpers\h-matchers.js" />
+    <Content Include="Scripts\lib\es5-shim\tests\helpers\h.js" />
+    <Content Include="Scripts\lib\es5-shim\tests\index.html" />
+    <Content Include="Scripts\lib\es5-shim\tests\index.min.html" />
+    <Content Include="Scripts\lib\es5-shim\tests\lib\jasmine-html.js" />
+    <Content Include="Scripts\lib\es5-shim\tests\lib\jasmine.css" />
+    <Content Include="Scripts\lib\es5-shim\tests\lib\jasmine.js" />
+    <Content Include="Scripts\lib\es5-shim\tests\lib\jasmine_favicon.png" />
+    <Content Include="Scripts\lib\es5-shim\tests\lib\json2.js" />
+    <Content Include="Scripts\lib\es5-shim\tests\spec\s-array.js" />
+    <Content Include="Scripts\lib\es5-shim\tests\spec\s-date.js" />
+    <Content Include="Scripts\lib\es5-shim\tests\spec\s-function.js" />
+    <Content Include="Scripts\lib\es5-shim\tests\spec\s-number.js" />
+    <Content Include="Scripts\lib\es5-shim\tests\spec\s-object.js" />
+    <Content Include="Scripts\lib\es5-shim\tests\spec\s-string.js" />
+    <Content Include="Scripts\lib\jquery\.gitignore" />
+    <Content Include="Scripts\lib\jquery\jquery-migrate.js" />
+    <Content Include="Scripts\lib\jquery\jquery-migrate.min.js" />
+    <Content Include="Scripts\lib\jquery\jquery.js" />
+    <Content Include="Scripts\lib\jquery\jquery.min.js" />
+    <Content Include="Scripts\lib\json3\lib\json3.js" />
+    <Content Include="Scripts\lib\json3\lib\json3.min.js" />
+    <Content Include="Scripts\lib\angular-cookies\.bower.json" />
+    <Content Include="Scripts\lib\angular-cookies\angular-cookies.min.js.map" />
+    <Content Include="Scripts\lib\angular-cookies\bower.json" />
+    <Content Include="Scripts\lib\angular-cookies\README.md" />
+    <Content Include="Scripts\lib\angular-mocks\.bower.json" />
+    <Content Include="Scripts\lib\angular-mocks\bower.json" />
+    <Content Include="Scripts\lib\angular-mocks\README.md" />
+    <Content Include="Scripts\lib\angular-resource\.bower.json" />
+    <Content Include="Scripts\lib\angular-resource\angular-resource.min.js.map" />
+    <Content Include="Scripts\lib\angular-resource\bower.json" />
+    <Content Include="Scripts\lib\angular-resource\README.md" />
+    <Content Include="Scripts\lib\angular-route\.bower.json" />
+    <Content Include="Scripts\lib\angular-route\angular-route.min.js.map" />
+    <Content Include="Scripts\lib\angular-route\bower.json" />
+    <Content Include="Scripts\lib\angular-route\README.md" />
+    <Content Include="Scripts\lib\angular-sanitize\.bower.json" />
+    <Content Include="Scripts\lib\angular-sanitize\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\lib\angular-sanitize\bower.json" />
+    <Content Include="Scripts\lib\angular-sanitize\README.md" />
+    <Content Include="Scripts\lib\angular-scenario\.bower.json" />
+    <Content Include="Scripts\lib\angular-scenario\bower.json" />
+    <Content Include="Scripts\lib\angular-scenario\README.md" />
+    <Content Include="Scripts\lib\angular\.bower.json" />
+    <Content Include="Scripts\lib\angular\angular.min.js.gzip" />
+    <Content Include="Scripts\lib\angular\angular.min.js.map" />
+    <Content Include="Scripts\lib\angular\bower.json" />
+    <Content Include="Scripts\lib\angular\README.md" />
+    <Content Include="Scripts\lib\bootstrap\.bower.json" />
+    <Content Include="Scripts\lib\bootstrap\bower.json" />
+    <Content Include="Scripts\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\lib\bootstrap\DOCS-LICENSE" />
+    <Content Include="Scripts\lib\bootstrap\less\alerts.less" />
+    <Content Include="Scripts\lib\bootstrap\less\badges.less" />
+    <Content Include="Scripts\lib\bootstrap\less\bootstrap.less" />
+    <Content Include="Scripts\lib\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Scripts\lib\bootstrap\less\button-groups.less" />
+    <Content Include="Scripts\lib\bootstrap\less\buttons.less" />
+    <Content Include="Scripts\lib\bootstrap\less\carousel.less" />
+    <Content Include="Scripts\lib\bootstrap\less\close.less" />
+    <Content Include="Scripts\lib\bootstrap\less\code.less" />
+    <Content Include="Scripts\lib\bootstrap\less\component-animations.less" />
+    <Content Include="Scripts\lib\bootstrap\less\dropdowns.less" />
+    <Content Include="Scripts\lib\bootstrap\less\forms.less" />
+    <Content Include="Scripts\lib\bootstrap\less\glyphicons.less" />
+    <Content Include="Scripts\lib\bootstrap\less\grid.less" />
+    <Content Include="Scripts\lib\bootstrap\less\input-groups.less" />
+    <Content Include="Scripts\lib\bootstrap\less\jumbotron.less" />
+    <Content Include="Scripts\lib\bootstrap\less\labels.less" />
+    <Content Include="Scripts\lib\bootstrap\less\list-group.less" />
+    <Content Include="Scripts\lib\bootstrap\less\media.less" />
+    <Content Include="Scripts\lib\bootstrap\less\mixins.less" />
+    <Content Include="Scripts\lib\bootstrap\less\modals.less" />
+    <Content Include="Scripts\lib\bootstrap\less\navbar.less" />
+    <Content Include="Scripts\lib\bootstrap\less\navs.less" />
+    <Content Include="Scripts\lib\bootstrap\less\normalize.less" />
+    <Content Include="Scripts\lib\bootstrap\less\pager.less" />
+    <Content Include="Scripts\lib\bootstrap\less\pagination.less" />
+    <Content Include="Scripts\lib\bootstrap\less\panels.less" />
+    <Content Include="Scripts\lib\bootstrap\less\popovers.less" />
+    <Content Include="Scripts\lib\bootstrap\less\print.less" />
+    <Content Include="Scripts\lib\bootstrap\less\progress-bars.less" />
+    <Content Include="Scripts\lib\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Scripts\lib\bootstrap\less\scaffolding.less" />
+    <Content Include="Scripts\lib\bootstrap\less\tables.less" />
+    <Content Include="Scripts\lib\bootstrap\less\theme.less" />
+    <Content Include="Scripts\lib\bootstrap\less\thumbnails.less" />
+    <Content Include="Scripts\lib\bootstrap\less\tooltip.less" />
+    <Content Include="Scripts\lib\bootstrap\less\type.less" />
+    <Content Include="Scripts\lib\bootstrap\less\utilities.less" />
+    <Content Include="Scripts\lib\bootstrap\less\variables.less" />
+    <Content Include="Scripts\lib\bootstrap\less\wells.less" />
+    <Content Include="Scripts\lib\bootstrap\LICENSE" />
+    <Content Include="Scripts\lib\bootstrap\LICENSE-MIT" />
+    <Content Include="Scripts\lib\bootstrap\README.md" />
+    <Content Include="Scripts\lib\es5-shim\.bower.json" />
+    <Content Include="Scripts\lib\es5-shim\CHANGES" />
+    <Content Include="Scripts\lib\es5-shim\CONTRIBUTORS.md" />
+    <Content Include="Scripts\lib\es5-shim\es5-sham.map" />
+    <Content Include="Scripts\lib\es5-shim\es5-shim.map" />
+    <Content Include="Scripts\lib\es5-shim\LICENSE" />
+    <Content Include="Scripts\lib\es5-shim\package.json" />
+    <Content Include="Scripts\lib\es5-shim\README.md" />
+    <Content Include="Scripts\lib\jquery\.bower.json" />
+    <Content Include="Scripts\lib\jquery\bower.json" />
+    <Content Include="Scripts\lib\jquery\component.json" />
+    <Content Include="Scripts\lib\jquery\composer.json" />
+    <Content Include="Scripts\lib\jquery\jquery.min.map" />
+    <Content Include="Scripts\lib\jquery\package.json" />
+    <Content Include="Scripts\lib\jquery\README.md" />
+    <Content Include="Scripts\lib\json3\.bower.json" />
+    <Content Include="Scripts\lib\json3\bower.json" />
+    <Content Include="Scripts\lib\json3\LICENSE" />
+    <Content Include="Scripts\lib\json3\README.md" />
+    <Content Include="Scripts\models\Base.js" />
+    <Content Include="Scripts\models\Config.js" />
+    <Content Include="Scripts\models\GenericObject.js" />
+    <Content Include="Scripts\views\peeps.html" />
+    <Content Include="Scripts\views\main.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Filters\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GenericProject.Core\GenericProject.Core.csproj">
+      <Project>{3acd9951-f8e0-4375-9c99-ddeccd69a906}</Project>
+      <Name>GenericProject.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\lib\angular-ui-utils\.bower.json" />
+    <Content Include="Scripts\lib\angular-ui-utils\.travis.yml" />
+    <Content Include="Scripts\lib\angular-ui-utils\bower.json" />
+    <Content Include="Scripts\lib\angular-ui-utils\CHANGELOG.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_PrimaryNavigation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\lib\angular-pines-notify\.bower.json" />
+    <Content Include="Scripts\lib\angular-pines-notify\bower.json" />
+    <Content Include="Scripts\lib\angular-pines-notify\LICENSE" />
+    <Content Include="Scripts\lib\angular-pines-notify\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\lib\pines-notify\.bower.json" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\AUTHORS" />
+    <Content Include="Scripts\lib\pines-notify\oxygen\COPYING" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\lib\spinjs\.bower.json" />
+    <Content Include="Scripts\lib\spinjs\.jshintrc" />
+    <Content Include="Scripts\lib\spinjs\.npmignore" />
+    <Content Include="Scripts\lib\spinjs\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\lib\angular-bootstrap\.bower.json" />
+    <Content Include="Scripts\lib\angular-bootstrap\bower.json" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54389/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

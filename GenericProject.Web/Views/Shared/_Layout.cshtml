@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>A Generic Project</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/app-lib-css")
+        @Scripts.Render("~/Scripts/angular-js")
+        @Scripts.Render("~/Scripts/app-lib-js")
+    </head>
+    <body ng-app="GenericApp">
+        @Html.Partial("_PrimaryNavigation")
+        @RenderBody()
+        <div class='container' ng-view=""></div>
+        @RenderSection("PageScripts", false)
+        @Scripts.Render("~/Scripts/app-start-js")
+        @Scripts.Render("~/Scripts/app-models-js")
+        @Scripts.Render("~/Scripts/app-directives-js")
+        @Scripts.Render("~/Scripts/app-services-js")
+        @Scripts.Render("~/Scripts/app-controllers-js")
+
+    </body>
+</html>
