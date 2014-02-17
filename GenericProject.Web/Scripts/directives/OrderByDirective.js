@@ -2,35 +2,48 @@
 
 // TODO: A better directive name than 'gen-order-by'
 angular.module('GenericApp')
-  .directive('genOrderBy', ['$log', function ($log) {
-      return function (scope, elm, attrs) {
-          elm.addClass('btn  btn-default');
-          var $icon = $('<i class="glyphicon">');
-          elm.append($icon);
-
-          elm.on('click', function () {
+  .directive('genOrderBy', ['$log', '$parse', function ($log, $parse) {
+      return {
+          scope: true,
+          template: '{{genName|inflector}}<i class="glyphicon" />',
+          link: function (scope, elm, attrs) {
               var $elm = $(elm),
-                  order;
+                  orderByExpr = $parse(attrs.genOrderBy),
+                  ascending = $parse(attrs.genAscending || 'Ascending');
 
-              $elm.siblings()
-                  .removeClass('ordered')
-                  .removeClass('ordered-desc');
+              elm.addClass('btn  btn-default');
+              scope.genName = attrs.genName;
 
-              order = 'ASC';
+              scope.$watch(ascending, function (val) {
+                  $log.info(val);
+                  if (orderByExpr(scope).match(attrs.genName)) {
+                      elm.removeClass('ordered-desc ordered');
+                      if (val) {
+                          elm.addClass('ordered-desc');
+                      }
+                      else {
+                          elm.addClass('ordered');
+                      }
+                  }
+              });
 
-              if ($elm.hasClass('ordered-desc')) {
-                  $elm.removeClass('ordered-desc');
-              }
-              else if ($elm.hasClass('ordered')) {
-                  $elm.addClass('ordered-desc');
-                  order = 'DESC';
-              }
+              scope.$watch(orderByExpr, function (val, prev) {
+                  if (!val) return;
+                  if (val.match(attrs.genName)) {
+                      $elm.siblings()
+                          .removeClass('ordered')
+                          .removeClass('ordered-desc');
+                  }
+              });
 
-              $elm.addClass('ordered');
-
-              scope.$apply(function () {
-                  scope.OrderBy = attrs.genOrderBy + ' ' + order;
-              })
-          });
+              elm.on('click', function () {
+                  scope.$apply(function () {
+                      ascending.assign(scope.$parent, !ascending(scope.$parent));
+                      scope.genOrderBy = attrs.genName;
+                      var direction = ascending(scope.$parent) ? 'ASC' : 'DESC';
+                      orderByExpr.assign(scope.$parent, scope.genOrderBy + ' ' + direction);
+                  })
+              });
+          }
       };
   }]);

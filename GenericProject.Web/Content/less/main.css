@@ -7082,3 +7082,7 @@ table th.btn.ordered i:before {
 table th.btn.ordered-desc i:before {
     content: "\e114";
 }
+
+.pagination {
+    cursor: pointer;
+}
