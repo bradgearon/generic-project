@@ -1,7 +1,8 @@
 ﻿'use strict';
 
 angular.module('GenericApp')
-    .controller('PeepsController', ['$scope', 'Api', '$routeParams', '$location', function ($scope, Api, $routeParams, $location) {
+    .controller('PeepsController', ['$scope', 'Api', '$routeParams', '$location', '$log',
+        function ($scope, Api, $routeParams, $location, $log) {
         $scope.CurrentPage = 0;
         $scope.PaginationState = { Items: [], PaginationRequest: { PageSize: 20, PageNumber: 1, OrderBy: null }, FilterArgs: {}, PageCount: 1, TotalCount: 0, PageSize: 20 };
         $scope.PeepFilter = { Search: $routeParams.search, ZipCode: $routeParams.zipCode };
@@ -38,18 +39,22 @@ angular.module('GenericApp')
         }, true);
 
 
-        //$scope.$watch('OrderBy',
-        //function (newValue, oldValue) {
-        //    if (newValue == oldValue) {
-        //        if (newValue.lastIndexOf('-desc') < 0) {
-        //            newValue = newValue + '-desc';
-        //        } else {
-        //            newValue = newValue.replace('-desc', '');
-        //        }
-        //    }
-        //    $location.search('orderBy', $scope.OrderBy);
-        //    $scope.refreshData();
-        //}, true);
+       $scope.$watch('OrderBy',
+       function (newValue, oldValue) {
+           if (!newValue) {
+               return;
+           }
+           $log.info(newValue, oldValue);
+           if (newValue == oldValue) {
+               if (newValue.lastIndexOf('-desc') < 0) {
+                   newValue = newValue + '-desc';
+               } else {
+                   newValue = newValue.replace('-desc', '');
+               }
+           }
+           $location.search('orderBy', $scope.OrderBy);
+           $scope.refreshData();
+       }, true);
 
 
         var api = new Api({ service: 'Peeps' });
