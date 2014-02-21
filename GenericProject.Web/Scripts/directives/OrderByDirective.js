@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 // TODO: A better directive name than 'gen-order-by'
 angular.module('GenericApp')

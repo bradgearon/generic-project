@@ -13,17 +13,40 @@ namespace GenericProject.Core.Data.EntityFramework
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public EntityFrameworkContext()
-            : base("GenericProject") {  }
+            : base("GenericProject") { }
 
         public DbSet<Role> Roles { get; set; }
+
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Title> Titles { get; set; }
+
+        public DbSet<Relation> Relations { get; set; }
+
+        public DbSet<Tag> Tags { get; set; }
+
         public DbSet<Peep> Peeps { get; set; }
+
+        public DbSet<Address> Addresses { get; set; }
+
+        public DbSet<AddressType> AddressTypes { get; set; }
+
+        public DbSet<State> States { get; set; }
 
         public static EntityFrameworkContext Instance { get { return (EntityFrameworkContext)Injector.Get<DbContext>(); } }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>().HasMany(u => u.Roles).WithMany(r => r.Users).Map(m => m.MapLeftKey("UserId").MapRightKey("RoleId").ToTable("UsersRoles"));
+            modelBuilder.Entity<User>().HasMany(u => u.Roles).WithMany(r => r.Users).Map(m => m.MapLeftKey("UserId").MapRightKey("RoleId").ToTable("UserRoles"));
+            modelBuilder.Entity<Peep>()
+                        .HasMany(u => u.Relations)
+                        .WithMany(r => r.Peeps)
+                        .Map(m => m.MapLeftKey("PeepId").MapRightKey("RelationId").ToTable("PeepRelations"));
+
+            modelBuilder.Entity<Peep>()
+                        .HasMany(u => u.Tags)
+                        .WithMany(r => r.Peeps)
+                        .Map(m => m.MapLeftKey("PeepId").MapRightKey("TagId").ToTable("PeepTags"));
         }
 
         public override int SaveChanges()

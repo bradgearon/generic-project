@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 angular.module('GenericApp')
     .controller('PeepsController', ['$scope', 'Api', '$routeParams', '$location', '$log',
